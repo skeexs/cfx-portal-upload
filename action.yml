@@ -35,6 +35,26 @@ inputs:
     description: 'The chunk size to split the file into'
     required: false
     default: 2097152
+  authMode:
+    description: 'Authentication mode: auto, http, or browser'
+    required: false
+    default: auto
+  requestTimeoutMs:
+    description: 'Request timeout in milliseconds for portal HTTP calls'
+    required: false
+    default: 30000
+  retryBaseDelayMs:
+    description: 'Base backoff delay in milliseconds for retries'
+    required: false
+    default: 500
+  retryMaxDelayMs:
+    description: 'Maximum backoff delay in milliseconds for retries'
+    required: false
+    default: 5000
+  zipExclude:
+    description:
+      'Comma-separated additional zip exclude patterns (e.g. dist/**,tmp/**)'
+    required: false
 
 runs:
   using: node20
